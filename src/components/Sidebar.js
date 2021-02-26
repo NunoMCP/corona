@@ -6,7 +6,7 @@ class Sidebar extends React.Component {
             <div className="thin ui left vertical inverted sidebar labeled icon menu overlay" style={{"zIndex": "999"}}>
                 <p className="item" style={{color: "white"}}>CORONA TRACKER</p>
                 <br/>
-                <a href="#" className="item">BITCHES AINT SHIT BUT HOES AND TRICKS</a>
+                <a href="#" className="item">aaaaaa</a>
                 <a href="#" className="item">2</a>
                 <a href="#" className="item">3</a>
             </div>
