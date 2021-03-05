@@ -3,7 +3,7 @@ import {Router, Route} from "react-router-dom"
 
 import DataList from "./DataList"
 import Sidebar from "./Sidebar"
-import DataSelect from "./DataSelect"
+import About from "./About"
 import history from "../history"
 
 class App extends React.Component {
@@ -18,7 +18,7 @@ class App extends React.Component {
                 <i onClick={this.toggleSidebar} className="plus square big outline icon"></i>
                 <Sidebar/>
                 <Route path="/" exact component={DataList}/>
-                <Route path="/county/" component={DataList}/>
+                <Route path="/about" component={About}/>
             </Router>
             </>
         )

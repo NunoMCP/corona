@@ -50,14 +50,14 @@ class DataList extends React.Component {
         }
         else return(
             <div style={{marginTop: "55px"}} className="ui stackable three column grid container">
-                <DataShow text="Ativos: " value={this.valueHelper("ativos", false)}/>
-                <DataShow text="Confirmados: " value={this.valueHelper("confirmados", false)}/>
-                <DataShow text="Recuperados: " value={this.valueHelper("recuperados", true)}/>
-                <DataShow text="Óbitos: " value={this.valueHelper("obitos", false)}/>
-                <DataShow text="Internados" value={this.valueHelper("internados", false)}/>
-                <DataShow text="Internados em UCI" value={this.valueHelper("internados_uci", false)}/>
-                <DataShow text="Internados em enfermaria" value={this.valueHelper("internados_enfermaria", false)}/>
-                <DataShow text="Data: " value={this.props.data.today.data[this.props.data.todayIndex]}/>
+                <DataShow text="Ativos: " icon="head side cough" value={this.valueHelper("ativos", false)}/>
+                <DataShow text="Confirmados: " icon="viruses" value={this.valueHelper("confirmados", false)}/>
+                <DataShow text="Recuperados: " icon="clinic medical" value={this.valueHelper("recuperados", true)}/>
+                <DataShow text="Óbitos: "icon="skull crossbones" value={this.valueHelper("obitos", false)}/>
+                <DataShow text="Internados" icon="first aid" value={this.valueHelper("internados", false)}/>
+                <DataShow text="Internados em UCI" icon="procedures" value={this.valueHelper("internados_uci", false)}/>
+                <DataShow text="Internados em enfermaria" icon="user nurse" value={this.valueHelper("internados_enfermaria", false)}/>
+                <DataShow text="Data: " icon="time" value={this.props.data.today.data[this.props.data.todayIndex]}/>
                 <DataSelect/>
             </div>
         )
