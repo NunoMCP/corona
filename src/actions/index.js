@@ -26,3 +26,13 @@ export const getBeforeData = (date) => {
         })
     }
 }
+
+export const getCounties = () => {
+    return async (dispatch) => {
+        const response = await corona.get("get_county_list/")
+        dispatch({
+            type: "GET_COUNTIES",
+            payload: response.data
+        })
+    }
+}

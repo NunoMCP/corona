@@ -1,7 +1,10 @@
 import React from "react"
+import {Router, Route} from "react-router-dom"
 
 import DataList from "./DataList"
 import Sidebar from "./Sidebar"
+import DataSelect from "./DataSelect"
+import history from "../history"
 
 class App extends React.Component {
     toggleSidebar = () => {
@@ -11,11 +14,12 @@ class App extends React.Component {
     render(){
         return(
             <>
-            <i onClick={this.toggleSidebar} className="plus square big outline icon"></i>
-            <Sidebar/>
-            <div className="ui container pusher">
-                <DataList/>
-            </div>
+            <Router history={history}>
+                <i onClick={this.toggleSidebar} className="plus square big outline icon"></i>
+                <Sidebar/>
+                <Route path="/" exact component={DataList}/>
+                <Route path="/county/" component={DataList}/>
+            </Router>
             </>
         )
     }

@@ -2,6 +2,7 @@ import "./DataList.css"
 
 import React from "react"
 import DataShow from "../components/DataShow"
+import DataSelect from "../components/DataSelect"
 import { getData, getBeforeData } from "../actions"
 import { connect } from "react-redux"
 
@@ -16,6 +17,7 @@ class DataList extends React.Component {
         if(dd<10) 
         {
             dd='0'+dd
+            ddBefore='0'+ddBefore
         } 
         if(mm<10) 
         {
@@ -47,7 +49,7 @@ class DataList extends React.Component {
             return <div>Loading...</div>
         }
         else return(
-            <div className="ui stackable three column grid">
+            <div style={{marginTop: "55px"}} className="ui stackable three column grid container">
                 <DataShow text="Ativos: " value={this.valueHelper("ativos", false)}/>
                 <DataShow text="Confirmados: " value={this.valueHelper("confirmados", false)}/>
                 <DataShow text="Recuperados: " value={this.valueHelper("recuperados", true)}/>
@@ -56,6 +58,7 @@ class DataList extends React.Component {
                 <DataShow text="Internados em UCI" value={this.valueHelper("internados_uci", false)}/>
                 <DataShow text="Internados em enfermaria" value={this.valueHelper("internados_enfermaria", false)}/>
                 <DataShow text="Data: " value={this.props.data.today.data[this.props.data.todayIndex]}/>
+                <DataSelect/>
             </div>
         )
     }
