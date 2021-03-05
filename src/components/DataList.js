@@ -28,36 +28,21 @@ class DataList extends React.Component {
     }
 
     valueHelper(arg, isMoreGood) {
-        let customClassString
         let isMoreThanZero = (this.props.data.today[arg][this.props.data.todayIndex] - this.props.data.yesterday[arg][this.props.data.yesterdayIndex]) > -1
-        
-        if(isMoreGood && isMoreThanZero){
-            customClassString = "green"
-        } else if (isMoreGood && !isMoreThanZero){
-            customClassString = "red"
-        } else if (!isMoreGood && isMoreThanZero){
-            customClassString = "red"
-        } else {
-            customClassString = "green"
-        }
+        let value = this.props.data.today[arg][this.props.data.todayIndex]
+        let calcValue = value - this.props.data.yesterday[arg][this.props.data.yesterdayIndex]
+        let prefix = calcValue > -1 ? "+" : ""
 
-        if((this.props.data.today[arg][this.props.data.todayIndex] - this.props.data.yesterday[arg][this.props.data.yesterdayIndex]) > -1){
-            return (
-                <div>
-                    <h3 style={{display: "inline"}}>{this.props.data.today[arg][this.props.data.todayIndex]}</h3>
-                    <h3 className={customClassString} style={{display: "inline"}}>(+{this.props.data.today[arg][this.props.data.todayIndex] - this.props.data.yesterday[arg][this.props.data.yesterdayIndex]})</h3>
-                </div>
-            )
-        }else return(
+        let customClassString = isMoreGood && isMoreThanZero ? "green" : !isMoreGood && isMoreThanZero ? "red" : "green"
+
+        return (
             <div>
-                <h3 style={{display: "inline"}} >{this.props.data.today[arg][this.props.data.todayIndex]}</h3>
-                <h3 className={customClassString} style={{display: "inline"}} >({this.props.data.today[arg][this.props.data.todayIndex] - this.props.data.yesterday[arg][this.props.data.yesterdayIndex]})</h3>
+                <h3 style={{display: "inline"}}>{value}</h3>
+                <h3 className={customClassString} style={{display: "inline"}}>({prefix + calcValue})</h3>
             </div>
         )
     }
     render(){
-        let customDiv = <div>cyka blyat</div>
-        
         if(!this.props.data.today || !this.props.data.yesterday){
             return <div>Loading...</div>
         }

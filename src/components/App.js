@@ -9,20 +9,15 @@ class App extends React.Component {
     }
     
     render(){
-        if(!true){
-            return <div>loading data</div>
-        }
-        else{
-            return(
-                <>
-                <i onClick={this.toggleSidebar} className="plus square big outline icon"></i>
-                <Sidebar/>
-                <div className="ui container pusher">
-                    <DataList/>
-                </div>
-                </>
-            )
-        }
+        return(
+            <>
+            <i onClick={this.toggleSidebar} className="plus square big outline icon"></i>
+            <Sidebar/>
+            <div className="ui container pusher">
+                <DataList/>
+            </div>
+            </>
+        )
     }
 }
 
