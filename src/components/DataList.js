@@ -58,7 +58,6 @@ class DataList extends React.Component {
                 <DataShow text="Internados em UCI" icon="procedures" value={this.valueHelper("internados_uci", false)}/>
                 <DataShow text="Internados em enfermaria" icon="user nurse" value={this.valueHelper("internados_enfermaria", false)}/>
                 <DataShow text="Data: " icon="time" value={this.props.data.today.data[this.props.data.todayIndex]}/>
-                <DataSelect/>
             </div>
         )
     }
