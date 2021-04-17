@@ -17,8 +17,8 @@ class App extends React.Component {
             <Router history={history}>
                 <i onClick={this.toggleSidebar} className="plus square big outline icon"></i>
                 <Sidebar/>
-                <Route path="/" exact component={DataList}/>
-                <Route path="/about" component={About}/>
+                <Route path="/corona" exact component={DataList}/>
+                <Route path="/corona/about" component={About}/>
             </Router>
             </>
         )
